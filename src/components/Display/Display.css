@@ -1,0 +1,9 @@
+.Display {
+  height: 100%;
+  display: grid;
+  justify-content: center;
+}
+img {
+  width: 200px;
+  display: block;
+}
