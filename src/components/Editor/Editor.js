@@ -1,9 +1,10 @@
 import React from 'react';
 import './Editor.css';
 
-export default function Editor({ head, setHead }) {
+export default function Editor({ head, setHead, middle, setMiddle }) {
   const handleChange = (e) => {
     e.target.name === 'head' && setHead(e.target.value);
+    e.target.name === 'middle' && setMiddle(e.target.value);
   };
   return (
     <div className="Editor">
@@ -18,7 +19,7 @@ export default function Editor({ head, setHead }) {
       </div>
       <label>Middle</label>
       <div className="form-control">
-        <select name="middle">
+        <select name="middle" value={middle} onChange={handleChange}>
           <option value="blue">Blue</option>
           <option value="dress">Dress</option>
           <option value="pink">Pink</option>
