@@ -1,11 +1,15 @@
 import React from 'react';
 import './Editor.css';
-export default function Editor() {
+
+export default function Editor({ head, setHead }) {
+  const handleChange = (e) => {
+    e.target.name === 'head' && setHead(e.target.value);
+  };
   return (
     <div className="Editor">
       <label>Head</label>
       <div className="form-control">
-        <select name="head">
+        <select name="head" value={head} onChange={handleChange}>
           <option value="bird">Bird</option>
           <option value="dog">Dog</option>
           <option value="duck">Duck</option>
