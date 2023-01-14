@@ -11,7 +11,7 @@ export default function Stats({ catchPhrase, headCount, middleCount, pantsCount 
       <ul key="catchphrase">
         {catchPhrase.map((phrase, i) => {
           i += 1;
-          return <li id={i} key={phrase}>{`${phrase}`}</li>;
+          return <li id={i} key={i}>{`${phrase}`}</li>;
         })}
       </ul>
     </div>
