@@ -1,9 +1,9 @@
 import React from 'react';
 import './Editor.css';
-import { useState } from 'react';
 import Head from '../Head/Head.js';
 import Middle from '../Middle/Middle.js';
 import Pants from '../Pants/Pants.js';
+import CatchPhrases from '../CatchPhrases/CatchPhrases.js';
 
 export default function Editor({
   head,
@@ -20,13 +20,6 @@ export default function Editor({
   pantsCount,
   setPantsCount,
 }) {
-  const [inputValue, setInputValue] = useState('');
-
-  const handleClick = () => {
-    setCatchPhrase((currentPhrases) => [...currentPhrases, inputValue]);
-    setInputValue('');
-  };
-
   return (
     <div className="Editor">
       <Head head={head} setHead={setHead} headCount={headCount} setHeadCount={setHeadCount} />
@@ -42,16 +35,7 @@ export default function Editor({
         pantsCount={pantsCount}
         setPantsCount={setPantsCount}
       />
-      <label>Catch Phrase</label>
-      <div className="form-control">
-        <input
-          type="text"
-          value={`${inputValue}`}
-          onChange={(e) => setInputValue(e.target.value)}
-          style={{ height: '30px', width: '300px' }}
-        />
-        <button onClick={handleClick}>Add Catch Phrase</button>
-      </div>
+      <CatchPhrases setCatchPhrase={setCatchPhrase} />
     </div>
   );
 }
