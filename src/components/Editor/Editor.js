@@ -3,6 +3,7 @@ import './Editor.css';
 import { useState } from 'react';
 import Head from '../Head/Head.js';
 import Middle from '../Middle/Middle.js';
+import Pants from '../Pants/Pants.js';
 
 export default function Editor({
   head,
@@ -21,13 +22,6 @@ export default function Editor({
 }) {
   const [inputValue, setInputValue] = useState('');
 
-  const handleChange = (e) => {
-    if (e.target.name === 'pants') {
-      setPants(e.target.value);
-      setPantsCount(pantsCount + 1);
-    }
-  };
-
   const handleClick = () => {
     setCatchPhrase((currentPhrases) => [...currentPhrases, inputValue]);
     setInputValue('');
@@ -42,17 +36,12 @@ export default function Editor({
         middleCount={middleCount}
         setMiddleCount={setMiddleCount}
       />
-
-      <label>Pants</label>
-      <div className="form-control">
-        <select name="pants" value={pants} onChange={handleChange}>
-          <option value="blue">Blue</option>
-          <option value="dog">Dog</option>
-          <option value="leg">Leg</option>
-          <option value="white">White</option>
-        </select>
-      </div>
-
+      <Pants
+        pants={pants}
+        setPants={setPants}
+        pantsCount={pantsCount}
+        setPantsCount={setPantsCount}
+      />
       <label>Catch Phrase</label>
       <div className="form-control">
         <input
