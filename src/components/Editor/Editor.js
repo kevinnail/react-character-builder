@@ -12,15 +12,21 @@ export default function Editor({
   setCatchPhrase,
   headCount,
   setHeadCount,
+  middleCount,
+  setMiddleCount,
 }) {
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e) => {
-    e.target.name === 'head' && setHead(e.target.value) && setHeadCount(headCount + 1);
     if (e.target.name === 'head') {
+      setHead(e.target.value);
       setHeadCount(headCount + 1);
     }
-    e.target.name === 'middle' && setMiddle(e.target.value);
+
+    if (e.target.name === 'middle') {
+      setMiddle(e.target.value);
+      setMiddleCount(middleCount + 1);
+    }
     e.target.name === 'pants' && setPants(e.target.value);
   };
 
