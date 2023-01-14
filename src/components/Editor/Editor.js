@@ -2,6 +2,7 @@ import React from 'react';
 import './Editor.css';
 import { useState } from 'react';
 import Head from '../Head/Head.js';
+import Middle from '../Middle/Middle.js';
 
 export default function Editor({
   head,
@@ -21,15 +22,6 @@ export default function Editor({
   const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e) => {
-    if (e.target.name === 'head') {
-      setHead(e.target.value);
-      setHeadCount(headCount + 1);
-    }
-
-    if (e.target.name === 'middle') {
-      setMiddle(e.target.value);
-      setMiddleCount(middleCount + 1);
-    }
     if (e.target.name === 'pants') {
       setPants(e.target.value);
       setPantsCount(pantsCount + 1);
@@ -44,15 +36,12 @@ export default function Editor({
   return (
     <div className="Editor">
       <Head head={head} setHead={setHead} headCount={headCount} setHeadCount={setHeadCount} />
-      <label>Middle</label>
-      <div className="form-control">
-        <select name="middle" value={middle} onChange={handleChange}>
-          <option value="blue">Blue</option>
-          <option value="dress">Dress</option>
-          <option value="pink">Pink</option>
-          <option value="red">Red</option>
-        </select>
-      </div>
+      <Middle
+        middle={middle}
+        setMiddle={setMiddle}
+        middleCount={middleCount}
+        setMiddleCount={setMiddleCount}
+      />
 
       <label>Pants</label>
       <div className="form-control">

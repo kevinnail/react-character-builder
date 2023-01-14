@@ -5,7 +5,6 @@ export default function Head({ head, setHead, headCount, setHeadCount }) {
     setHead(e.target.value);
     setHeadCount(headCount + 1);
   };
-  console.log('headCount', headCount);
 
   return (
     <>
