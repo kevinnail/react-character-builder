@@ -14,6 +14,7 @@ function App() {
   const [inputValue, setInputValue] = useState('');
   const [headCount, setHeadCount] = useState(0);
   const [middleCount, setMiddleCount] = useState(0);
+  const [pantsCount, setPantsCount] = useState(0);
 
   return (
     <div className="App">
@@ -31,9 +32,16 @@ function App() {
         setHeadCount={setHeadCount}
         middleCount={middleCount}
         setMiddleCount={setMiddleCount}
+        pantsCount={pantsCount}
+        setPantsCount={setPantsCount}
       />
       <Display head={head} middle={middle} pants={pants} catchPhrase={catchPhrase} />
-      <Stats catchPhrase={catchPhrase} headCount={headCount} middleCount={middleCount} />
+      <Stats
+        catchPhrase={catchPhrase}
+        headCount={headCount}
+        middleCount={middleCount}
+        pantsCount={pantsCount}
+      />
     </div>
   );
 }

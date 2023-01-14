@@ -14,6 +14,8 @@ export default function Editor({
   setHeadCount,
   middleCount,
   setMiddleCount,
+  pantsCount,
+  setPantsCount,
 }) {
   const [inputValue, setInputValue] = useState('');
 
@@ -27,7 +29,10 @@ export default function Editor({
       setMiddle(e.target.value);
       setMiddleCount(middleCount + 1);
     }
-    e.target.name === 'pants' && setPants(e.target.value);
+    if (e.target.name === 'pants') {
+      setPants(e.target.value);
+      setPantsCount(pantsCount + 1);
+    }
   };
 
   const handleClick = () => {
