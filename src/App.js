@@ -10,6 +10,9 @@ function App() {
   const [head, setHead] = useState('bird');
   const [middle, setMiddle] = useState('blue');
   const [pants, setPants] = useState('blue');
+  const [catchPhrase, setCatchPhrase = []] = useState('');
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <div className="App">
       <Editor
@@ -19,9 +22,12 @@ function App() {
         setMiddle={setMiddle}
         pants={pants}
         setPants={setPants}
+        setCatchPhrase={setCatchPhrase}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
       />
-      <Display head={head} middle={middle} pants={pants} />
-      <Stats />
+      <Display head={head} middle={middle} pants={pants} catchPhrase={catchPhrase} />
+      <Stats catchPhrase={catchPhrase} />
     </div>
   );
 }

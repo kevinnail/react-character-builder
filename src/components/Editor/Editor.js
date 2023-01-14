@@ -1,12 +1,28 @@
 import React from 'react';
 import './Editor.css';
+import { useState } from 'react';
 
-export default function Editor({ head, setHead, middle, setMiddle, pants, setPants }) {
+export default function Editor({
+  head,
+  setHead,
+  middle,
+  setMiddle,
+  pants,
+  setPants,
+  setCatchPhrase,
+}) {
+  const [inputValue, setInputValue] = useState('');
   const handleChange = (e) => {
     e.target.name === 'head' && setHead(e.target.value);
     e.target.name === 'middle' && setMiddle(e.target.value);
     e.target.name === 'pants' && setPants(e.target.value);
   };
+
+  const handleClick = () => {
+    setCatchPhrase((currentPhrases) => [...currentPhrases, inputValue]);
+    setInputValue('');
+  };
+
   return (
     <div className="Editor">
       <label>Head</label>
@@ -37,10 +53,16 @@ export default function Editor({ head, setHead, middle, setMiddle, pants, setPan
         </select>
       </div>
 
-      <label>Text</label>
+      <label>Catch Phrase</label>
       <div className="form-control">
-        <input name="text" style={{ height: '30px', width: '300px' }} />
-        <button>Add Catch Phrase</button>
+        <input
+          type="text"
+          // placeholder={catchPhrase}
+          value={`${inputValue}`}
+          onChange={(e) => setInputValue(e.target.value)}
+          style={{ height: '30px', width: '300px' }}
+        />
+        <button onClick={handleClick}>Add Catch Phrase</button>
       </div>
     </div>
   );
