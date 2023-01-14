@@ -12,6 +12,7 @@ function App() {
   const [pants, setPants] = useState('blue');
   const [catchPhrase, setCatchPhrase = []] = useState('');
   const [inputValue, setInputValue] = useState('');
+  const [headCount, setHeadCount] = useState(0);
 
   return (
     <div className="App">
@@ -25,9 +26,11 @@ function App() {
         setCatchPhrase={setCatchPhrase}
         inputValue={inputValue}
         setInputValue={setInputValue}
+        headCount={headCount}
+        setHeadCount={setHeadCount}
       />
       <Display head={head} middle={middle} pants={pants} catchPhrase={catchPhrase} />
-      <Stats catchPhrase={catchPhrase} />
+      <Stats catchPhrase={catchPhrase} headCount={headCount} />
     </div>
   );
 }

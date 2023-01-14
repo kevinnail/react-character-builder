@@ -10,10 +10,16 @@ export default function Editor({
   pants,
   setPants,
   setCatchPhrase,
+  headCount,
+  setHeadCount,
 }) {
   const [inputValue, setInputValue] = useState('');
+
   const handleChange = (e) => {
-    e.target.name === 'head' && setHead(e.target.value);
+    e.target.name === 'head' && setHead(e.target.value) && setHeadCount(headCount + 1);
+    if (e.target.name === 'head') {
+      setHeadCount(headCount + 1);
+    }
     e.target.name === 'middle' && setMiddle(e.target.value);
     e.target.name === 'pants' && setPants(e.target.value);
   };
