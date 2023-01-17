@@ -1,0 +1,19 @@
+.Editor {
+  height: 700px;
+  background-color: rgb(255, 255, 205);
+  font-size: 1.5rem;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-control {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-control select {
+  font-size: 2rem;
+}

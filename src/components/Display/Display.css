@@ -1,0 +1,10 @@
+.Display {
+  height: 100%;
+  display: grid;
+  justify-items: center;
+}
+img {
+  /* width: 200px; */
+  height: 150px;
+  display: block;
+}
